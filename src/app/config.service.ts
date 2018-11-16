@@ -13,4 +13,8 @@ export class ConfigService {
   getconfig(){
     return this.config;
   }
+
+  getPostById(id: number){
+    return this.config.blog.posts[id - 1];
+  }
 }
