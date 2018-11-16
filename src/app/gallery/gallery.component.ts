@@ -1,3 +1,4 @@
+import { ConfigService } from './../config.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GalleryComponent implements OnInit {
 
-  constructor() { }
+  gallery = { };
+
+  constructor(private config: ConfigService) { }
 
   ngOnInit() {
+    this.gallery = this.getgallery();
   }
 
+  getgallery(){
+    return this.config.getconfig().gallery;
+  }
 }

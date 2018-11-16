@@ -1,3 +1,4 @@
+import { ConfigService } from './../config.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  footer: { };
+
+  constructor(private config: ConfigService) { }
 
   ngOnInit() {
+    this.footer = this.getfooter();
   }
 
+  getfooter(){
+    return this.config.getconfig().footer;
+  }
 }

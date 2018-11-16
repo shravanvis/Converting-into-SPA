@@ -1,3 +1,4 @@
+import { ConfigService } from './../config.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PricingComponent implements OnInit {
 
-  constructor() { }
+  pricing: { };
+
+  constructor(private config: ConfigService) { }
 
   ngOnInit() {
+    this.pricing = this.getpricing();
   }
 
+  getpricing(){
+    return this.config.getconfig().pricing;
+  }
 }

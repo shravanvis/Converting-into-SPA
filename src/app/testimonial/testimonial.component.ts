@@ -1,3 +1,4 @@
+import { ConfigService } from './../config.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestimonialComponent implements OnInit {
 
-  constructor() { }
+  testimonials: { };
+ 
+  constructor(private config: ConfigService) { }
 
   ngOnInit() {
+    this.testimonials = this.gettestimonials();
+  }
+
+  gettestimonials(){
+    return this.config.getconfig().testimonials;
   }
 
 }

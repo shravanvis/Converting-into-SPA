@@ -1,3 +1,4 @@
+import { ConfigService } from './../config.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SocialComponent implements OnInit {
 
-  constructor() { }
+  socialsites: { };
+
+  constructor(private config: ConfigService) { }
 
   ngOnInit() {
+    this.socialsites = this.getsocialsites();
   }
 
+  getsocialsites(){
+    return this.config.getconfig().socialsites;
+  }
 }

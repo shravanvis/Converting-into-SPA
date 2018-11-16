@@ -1,4 +1,4 @@
-<div id="header" class="nav-collapse">
+<div id="header" class="nav-collapse nav-solid">
         <div class="row clearfix">
             <div class="col-1">
   
@@ -16,36 +16,37 @@
                 </div>
                 <!--End of Logo-->
   
-                <aside>
-                <app-social></app-social>
-              </aside>
-                <!--Main Navigation-->
-          <nav id="nav-main">
-                  <ul>
-                       <li>
-                           <a routerLink="/Home">Home</a>
-                       </li>
-                       <li>
-                           <a routerLink="/About">About</a>
-                       </li>
-                       <li>
-                           <a routerLink="/Gallery">Gallery</a>
-                       </li>
-                       <li>
-                           <a routerLink="/Services">Services</a>
-                       </li>
-                       <li>
-                           <a routerLink="/Testimonial">Testimonials</a>
-                       </li>
-                       <li>
-                           <a routerLink="/Clients">Clients</a>
-                       </li>
-                       <li>
-                           <a routerLink="/Pricing">Pricing</a>
-                       </li>
-                  </ul>
-            </nav>
-        <!--End of Main Navigation-->
+                    <aside>
+                        <app-social></app-social>
+                    </aside>
+                
+                    <!--Main Navigation-->
+<nav id="nav-main">
+        <ul>
+            <li>
+                <a routerLink="/Home" (click)="getActiveTab('home')" [class.active]="activetab === 'home'">Home</a>
+            </li>
+            <li>
+                <a routerLink="/About" (click)="getActiveTab('about')" [class.active]="activetab === 'about'">About</a>
+            </li>
+            <li>
+                <a routerLink="/Gallery" (click)="getActiveTab('gallery')" [class.active]="activetab === 'gallery'">Gallery</a>
+            </li>
+            <li>
+                <a routerLink="/Services" (click)="getActiveTab('services')" [class.active]="activetab === 'services'">Services</a>
+            </li>
+            <li>
+                <a routerLink="/Testimonial" (click)="getActiveTab('testimonial')" [class.active]="activetab === 'testimonial'">Testimonials</a>
+            </li>
+            <li>
+                <a routerLink="/Clients" (click)="getActiveTab('clients')" [class.active]="activetab === 'clients'">Clients</a>
+            </li>
+            <li>
+                <a routerLink="/Pricing" (click)="getActiveTab('pricing')" [class.active]="activetab === 'pricing'">Pricing</a>
+            </li>
+        </ul>
+</nav>
+                    <!--End of Main Navigation-->
   
   
                 
